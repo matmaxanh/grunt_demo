@@ -1,4 +1,29 @@
-/* Move down content because we have a fixed navbar that is 50px tall */
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+$primary-color: red;
+
+/* mixins with media */
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin tablet {
+    @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop-width}) {
+        @content;
+    }
+}
+
+/* main css */
 body {
   padding-top: 50px;
   padding-bottom: 20px;
@@ -6,10 +31,30 @@ body {
 
 .content {
     h1 {
-        color: red;
+        color: $primary-color;
     }
-    .btn.btn-primary {
-    	font-size: 18px;
-    	background-color: red;
+    .btn{
+        @include border-radius(10px);
+        &.btn-primary {
+            font-size: 18px;
+            background-color: $primary-color;
+        }
+    }
+}
+
+.container {
+    h2 {
+        font-size: 16px;
+    }
+    p {
+        @extend h2;
+        line-height: 2em;
+
+        @include tablet {
+            color: blue;
+        }
+        @include desktop {
+            color: green;
+        }
     }
 }

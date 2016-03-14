@@ -1,12 +1,29 @@
-/* Move down content because we have a fixed navbar that is 50px tall */
+/* mixins with media */
+/* main css */
 body {
   padding-top: 50px;
   padding-bottom: 20px; }
 
 .content h1 {
   color: red; }
-.content .btn.btn-primary {
-  font-size: 18px;
-  background-color: red; }
+.content .btn {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px; }
+  .content .btn.btn-primary {
+    font-size: 18px;
+    background-color: red; }
+
+.container h2, .container p {
+  font-size: 16px; }
+.container p {
+  line-height: 2em; }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .container p {
+      color: blue; } }
+  @media (min-width: 1024px) {
+    .container p {
+      color: green; } }
 
 /*# sourceMappingURL=style.css.map */
