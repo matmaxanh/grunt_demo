@@ -4,8 +4,8 @@ A small demo website using grunt. The demo is tested on MacOS.
 ### Node
 Install node at here[https://nodejs.org/en/download/]
 ### Grunt
-npm install -g grunt
-npm install -g grunt-cli
+* npm install -g grunt
+* npm install -g grunt-cli
 ### Sass compile
 gem install sass
 ## Commands
